@@ -1,26 +1,3 @@
-# import streamlit as st
-# import re
-
-# st.set_page_config(
-#     page_title="CrackShield | Aqsaa Qaazi",
-#     page_icon="🔐",
-#     layout="centered"
-# )
-
-# st.title("CrackShield | Password Strength Meter")
-# st.subheader("Detect & Strengthen Weak Passwords")
-
-# st.markdown("_Powered by Streamlit_ 💡")
-
-# password = st.text_input(type="password", placeholder="Type Your Password here...", label="Password")
-# feedback = []
-# points   = 0 
-
-# if len(password) == 9:
-#     points + 1
-# re.search(r'\d', password)
-
-
 import streamlit as st
 import re
 
