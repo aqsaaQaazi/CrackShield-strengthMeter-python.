@@ -9,9 +9,27 @@ st.set_page_config(
     page_icon="🔐", 
     layout="centered")
 
-st.header("CrackShield | Password Strength Meter")
-st.subheader("Detect and Strengthen Weak Passwords")
+
+# ----------------------SEO TAGS----------------------------
+
+st.markdown("""
+    <meta name="description" content="CrackShield - A password strength meter that helps you detect weak passwords and generate strong ones."/>
+    <meta name="keywords" content="password strength, password security, strong password generator, secure password checker"/>
+    <meta name="author" content="Aqsaa Qaazi"/>
+    <meta property="og:title" content="CrackShield | Password Strength Meter"/>
+    <meta property="og:description" content="Check your password strength and generate a secure password with CrackShield."/>
+    <meta property="og:image" content="https://yourdomain.com/preview-image.png"/>
+    <meta property="og:url" content="https://crackshield.app"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+""", unsafe_allow_html=True)
+
+# -------------UI/UX---------------------------
+
+
+st.header("# CrackShield | Password Strength Meter")
+st.subheader("### Detect and Strengthen Weak Passwords")
 st.markdown("###### (Or generate one if you're unsure)")
+
 
 # -----------------------------STATES---------------------------------
 
