@@ -18,8 +18,8 @@ st.markdown("""
     <meta name="author" content="Aqsaa Qaazi"/>
     <meta property="og:title" content="CrackShield | Password Strength Meter"/>
     <meta property="og:description" content="Check your password strength and generate a secure password with CrackShield."/>
-    <meta property="og:image" content="https://yourdomain.com/preview-image.png"/>
-    <meta property="og:url" content="https://crackshield.app"/>
+    <meta property="og:image" content="https://crackshield.streamlit.app/preview-image.png"/>
+    <meta property="og:url" content="https://crackshield.streamlit.app"/>
     <meta name="twitter:card" content="summary_large_image"/>
 """, unsafe_allow_html=True)
 
@@ -130,4 +130,5 @@ if password:
         st.write("**Suggestions to Improve:**")
         for suggestion in suggestions:
             st.markdown(f"- {suggestion}")
+
 
