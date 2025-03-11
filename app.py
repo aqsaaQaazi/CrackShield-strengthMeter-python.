@@ -26,8 +26,8 @@ st.markdown("""
 # -------------UI/UX---------------------------
 
 
-st.header("# CrackShield | Password Strength Meter")
-st.subheader("### Detect and Strengthen Weak Passwords")
+st.markdown("# CrackShield | Password Strength Meter")
+st.markdown("### Detect and Strengthen Weak Passwords")
 st.markdown("###### (Or generate one if you're unsure)")
 
 
