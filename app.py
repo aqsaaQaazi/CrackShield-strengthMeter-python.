@@ -2,7 +2,6 @@ import streamlit as st
 import re
 import random
 import string
-import clipboard
 
 st.set_page_config(
     page_title="CrackShield | Aqsaa Qaazi", 
@@ -45,29 +44,15 @@ if "copy_success" not in st.session_state:
 # ---------------------------------VARIABLES----------------------------
 
 
-col1, col2 = st.columns([6, 3]) 
-
-with col1:
-    password = st.text_input(
-            "Enter your password:", 
-            placeholder="Type your password here...", 
-            value=st.session_state.password,
-            type="password",
-            key = "password_input",
-            disabled=st.session_state.disabled,
-            label_visibility="collapsed"            
-            )
-    copy_message = st.empty()
-
-with col2:
-    if st.session_state.disabled:
-        if st.button("Copy", help="Copy to clipboard"):
-            try:
-                clipboard.copy(st.session_state.password)
-                st.success("Copied to clipboard!")
-            except Exception as e:
-                st.error(f"Clipboard copy failed: {e}")
-            
+password = st.text_input(
+        "Enter your password:", 
+        placeholder="Type your password here...", 
+        value=st.session_state.password,
+        type="password",
+        key = "password_input",
+        disabled=st.session_state.disabled,
+        label_visibility="collapsed"            
+        )
 
 # -------------------------------------FUNCTIONS--------------------------
 def generate_password(length=10):
@@ -122,10 +107,7 @@ def evaluate_password(password):
 if st.button("🎲", help = "Generate a random strong password"):
     st.session_state.password = generate_password()
     st.session_state.disabled = True
-    
-if st.session_state.copy_success:
-    with col1:
-        copy_message.success("Copied to Clipboard!")
+
     
 if password:
     points, strength, suggestions = evaluate_password(password)
