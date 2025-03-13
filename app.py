@@ -2,7 +2,7 @@ import streamlit as st
 import re
 import random
 import string
-import clipboard 
+import clipboard
 
 st.set_page_config(
     page_title="CrackShield | Aqsaa Qaazi", 
@@ -61,14 +61,17 @@ with col1:
 
 with col2:
     if st.session_state.disabled:
-        if st.button("Copy",help = "Copy to clipboard"):
-            clipboard.copy(st.session_state.password)
-            st.session_state.copy_success = True
+        if st.button("Copy", help="Copy to clipboard"):
+            try:
+                clipboard.copy(st.session_state.password)
+                st.success("Copied to clipboard!")
+            except Exception as e:
+                st.error(f"Clipboard copy failed: {e}")
+            
 
 # -------------------------------------FUNCTIONS--------------------------
 def generate_password(length=10):
     chars = string.ascii_lowercase + string.ascii_uppercase + string.digits + "!@#$%^&*()_+{}:;,.?~/-"
-    
     return "".join(random.choice(chars) for _ in range (length))
 
 def evaluate_password(password):
