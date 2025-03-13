@@ -2,7 +2,7 @@ import streamlit as st
 import re
 import random
 import string
-import pyperclip 
+import clipboard 
 
 st.set_page_config(
     page_title="CrackShield | Aqsaa Qaazi", 
@@ -24,6 +24,8 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # -------------UI/UX---------------------------
+
+# i could've used headings here but markdown is good for searchengines,
 
 
 st.markdown("# CrackShield | Password Strength Meter")
@@ -60,7 +62,7 @@ with col1:
 with col2:
     if st.session_state.disabled:
         if st.button("Copy",help = "Copy to clipboard"):
-            pyperclip.copy(st.session_state.password)
+            clipboard.copy(st.session_state.password)
             st.session_state.copy_success = True
 
 # -------------------------------------FUNCTIONS--------------------------
